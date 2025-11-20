@@ -1,0 +1,37 @@
+{
+  "capabilities": {
+
+  },
+  "defaultInputModes": [
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "description": "An A2A Agent that takes text or JSON string queries and generate songs.",
+  "name": "generate_song_agent",
+  "preferredTransport": "JSONRPC",
+  "protocolVersion": "0.3.0",
+  "skills": [
+    {
+      "description": "An A2A Agent that takes text or JSON string queries and generate songs. \n    I am an A2A Agent that can generate audio using tool 'proxy_generate'.\n    - I will be given a JSON string\n    - I must return serializable JSON String\n    ",
+      "id": "generate_song_agent",
+      "name": "model",
+      "tags": [
+        "llm"
+      ]
+    },
+    {
+      "description": "This is the Gradio callable. It calls the remote SongGeneration space and returns\neither a Gradio-playable filepath (so the UI can play it) and a JSON dict where 'audio_base64' is available.\n\nargs:\n    lyrics: str\n    description: str,\n    genre: str,\n    cfg_coef: float,\n    temperature: float,\n    duration_state: int,\n    use_async: bool\n\nreturn:\n    file_url : Dict",
+      "id": "generate_song_agent-proxy_generate",
+      "name": "proxy_generate",
+      "tags": [
+        "llm",
+        "tools"
+      ]
+    }
+  ],
+  "supportsAuthenticatedExtendedCard": false,
+  "url": "https://shivenduu-songgeneratora2a.hf.space",
+  "version": "0.0.1"
+}
