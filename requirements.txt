@@ -1,0 +1,7 @@
+gradio
+gradio_client
+requests
+
+#for A2A Wrapper for our Agent
+google-adk
+google-adk[a2a]
